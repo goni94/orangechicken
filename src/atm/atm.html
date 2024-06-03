@@ -44,10 +44,16 @@
             height: 200px;
         }
 
-        .image {
+        .image-container {
             position: relative;
-            bottom: 620px;
-            left: 420px;
+            text-align: center;
+        }
+
+        .image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -105%);
         }
     </style>
 </head>
@@ -66,8 +72,8 @@
         <div class="button-container">
             <button type="button" class="btn btn-danger">취소</button>
         </div>
-        <div class="image">
-            <img src="../image/happy.jpg">
+        <div class="image-container">
+            <img src="../image/happy.jpg" class="image">
         </div>
     </div>
 </div>
