@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data.mapper.TransactionsMapperInter">
+
+    <insert id="insertTransaction" parameterType="data.dto.TransactionsDto">
+    INSERT INTO Transactions (account_id, transaction_type, recieving_account, transaction_date, bank_type, amount)
+    VALUES (#{account_id}, #{transaction_type}, #{recieving_account}, #{transactionDate}, #{bank_type}, #{amount})
+	</insert>
+
+    <!-- Select transactions by account ID -->
+    <select id="getTransactionsByAccountId" parameterType="int" resultType="data.dto.TransactionsDto">
+        SELECT * FROM Transactions WHERE account_id = #{account_id}
+    </select>
+
+</mapper>
